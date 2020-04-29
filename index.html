@@ -53,10 +53,24 @@
     <div class="posts">
 <article class="post">
   <h1 class="post-title">
-    <a href="https://waneyshan.github.io/post/readme/">Readme</a>
+    <a href="https://waneyshan.github.io/post/readme/"></a>
   </h1>
-  <time datetime="2020-04-29T14:10:41&#43;0800" class="post-date">Wed, Apr 29, 2020</time>
+  <time datetime="0001-01-01T00:00:00Z" class="post-date">Mon, Jan 1, 0001</time>
+  Django基础 文档链接
+  新建项目 略
+  新建app 略
+  Channels + Django 实现Websock 文档链接
+  安装channels
+pip install channels   配置Django的settings.py文件 在INSTALL_APPS字段添加channels 如下, 尽量添加在其他app的前面：
+INSTALLED_APPS = ( &#39;channels&#39;, &#39;django.contrib.auth&#39;, &#39;django.contrib.contenttypes&#39;, &#39;django.contrib.sessions&#39;, &#39;django.contrib.sites&#39;, ··· )   在项目同名目录下新建文件routiong.py
+也即，routing.py和settings.py在同一目录下。 【注1】：规定目录只是方便管理，本质上无论放在哪个位置都可以 【注2】：routing相关模块的功能和urls相关模块的功能相似，
+from channels.routing import ProtocolTypeRouter application = ProtocolTypeRouter({ # Empty for now (http-&gt;django views is added by default) })   配置settings.py文件
+添加配置项如下：
+ASGI_APPLICATION = &#34;myproject.routing.application&#34; 其中，‘myproject’为你的项目名称，整个路径就是上一步文件中定义的application的路径。
   
+  <div class="read-more-link">
+    <a href="/post/readme/">Read More…</a>
+  </div>
   
 </article>
 </div>
